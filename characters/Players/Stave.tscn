@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvkiaxspfn6cj"]
+
+[ext_resource type="Script" path="res://characters/Players/stave.gd" id="1_mprjm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sdmeh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gdw5e"]
+size = Vector3(0.1, 0.1, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eniia"]
+
+[node name="Stave" type="CharacterBody3D"]
+script = ExtResource("1_mprjm")
+
+[node name="Model" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_sdmeh")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="FaceDirection" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.615706)
+mesh = SubResource("BoxMesh_gdw5e")
+skeleton = NodePath("../../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_eniia")
