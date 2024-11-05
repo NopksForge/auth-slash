@@ -15,6 +15,10 @@ run/main_scene="res://levels/practice_room/practice_room.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+ground=""
+
 [input]
 
 move_left={
