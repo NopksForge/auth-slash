@@ -25,7 +25,6 @@ func spawn_box() -> void:
 		return
 		
 	var box = box_scene.instantiate()
-	print(box)
 	add_child(box)
 	boxes.append(box)
 	
