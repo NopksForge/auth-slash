@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxflt8vdcpfke"]
+
+[ext_resource type="Script" path="res://scenes/prefebs/box_rain/box_rain.gd" id="1_qqf22"]
+[ext_resource type="PackedScene" uid="uid://ggjqnr7jy424" path="res://scenes/prefebs/box/box.tscn" id="2_wefo0"]
+
+[node name="BoxRain" type="Node3D"]
+script = ExtResource("1_qqf22")
+box_scene = ExtResource("2_wefo0")

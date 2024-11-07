@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsrfpdlw5p5g3"]
+
+[ext_resource type="Script" path="res://script/camera_system/camera_system.gd" id="1_vu557"]
+
+[node name="CameraRig" type="Node3D"]
+script = ExtResource("1_vu557")
+
+[node name="Camera" type="Camera3D" parent="."]
