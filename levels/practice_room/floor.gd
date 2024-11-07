@@ -1,7 +1,6 @@
 extends StaticBody3D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Add this to your ground node
-	add_to_group("ground")
+	# Set collision layers only
+	collision_layer = 0b00000000_00000000_00000000_00000010  # layer 2
+	collision_mask = 0b00000000_00000000_00000000_00000101   # layers 1 & 3
