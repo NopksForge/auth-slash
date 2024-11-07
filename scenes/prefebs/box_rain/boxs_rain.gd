@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var box_scene: PackedScene  # Reference to the Box scene
-@export var spawn_area_size: Vector2 = Vector2(50, 50)  # Width and Length of spawn area
+@export var spawn_area_size: Vector2 = Vector2(20, 20)  # Width and Length of spawn area
 @export var spawn_height: float = 15.0  # Height at which boxes spawn
 @export var spawn_interval: float = 0.5  # Time between spawns
 @export var max_boxes: int = 50  # Maximum number of boxes at once

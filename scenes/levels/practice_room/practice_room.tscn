@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://coyd7blrkj2f8"]
 
-[ext_resource type="Script" path="res://levels/practice_room/camera_rig.gd" id="1_6g22g"]
-[ext_resource type="Script" path="res://levels/practice_room/floor.gd" id="2_8ebd8"]
+[ext_resource type="Script" path="res://scenes/prefebs/camera_rig/camera_rig.gd" id="1_6g22g"]
+[ext_resource type="Script" path="res://scenes/prefebs/floor/floor.gd" id="2_8ebd8"]
 [ext_resource type="PackedScene" uid="uid://dvkiaxspfn6cj" path="res://characters/Players/Stave.tscn" id="2_cfoec"]
-[ext_resource type="Script" path="res://levels/practice_room/boxs_rain.gd" id="3_yldo7"]
-[ext_resource type="PackedScene" uid="uid://ggjqnr7jy424" path="res://levels/practice_room/box.tscn" id="5_ukn1i"]
+[ext_resource type="Script" path="res://scenes/prefebs/box_rain/boxs_rain.gd" id="3_yldo7"]
+[ext_resource type="PackedScene" uid="uid://ggjqnr7jy424" path="res://scenes/prefebs/box/box.tscn" id="5_ukn1i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7e2qp"]
 size = Vector3(50, 1, 50)
@@ -19,7 +19,7 @@ script = ExtResource("1_6g22g")
 
 [node name="Camera" type="Camera3D" parent="CameraRig"]
 
-[node name="Floor" type="StaticBody3D" parent="." groups=["ground"]]
+[node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -0.5, 0)
 script = ExtResource("2_8ebd8")
 metadata/_edit_group_ = true

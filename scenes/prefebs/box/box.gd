@@ -3,8 +3,11 @@ extends RigidBody3D
 signal box_destroyed(box: Node3D)
 
 @export var destruction_delay: float = 0.2
+@export var stop_threshold: float = 0.1
+@export var check_time: float = 0.5
 
 var is_being_destroyed: bool = false
+var stop_timer: float = 0.0
 
 func _ready():
 	# Enable contact monitoring for collision detection
@@ -24,14 +27,19 @@ func _ready():
 		randf_range(-1, 1)
 	)
 
-func _physics_process(_delta):
+func _physics_process(delta: float):
 	if is_being_destroyed:
 		return
 		
 	# Check for collision with ground
 	var colliding_bodies = get_colliding_bodies()
 	if colliding_bodies.size() > 0:
-		destroy()
+		if linear_velocity.length() < stop_threshold:
+			stop_timer += delta
+			if stop_timer >= check_time:
+				destroy()
+		else:
+			stop_timer = 0.0
 
 func destroy():
 	if is_being_destroyed:
