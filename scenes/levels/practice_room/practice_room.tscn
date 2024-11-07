@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/prefebs/camera_rig/camera_rig.gd" id="1_6g22g"]
 [ext_resource type="Script" path="res://scenes/prefebs/floor/floor.gd" id="2_8ebd8"]
 [ext_resource type="PackedScene" uid="uid://dvkiaxspfn6cj" path="res://characters/Players/Stave.tscn" id="2_cfoec"]
-[ext_resource type="Script" path="res://scenes/prefebs/box_rain/boxs_rain.gd" id="3_yldo7"]
+[ext_resource type="Script" path="res://scenes/prefebs/box_rain/box_rain.gd" id="3_yldo7"]
 [ext_resource type="PackedScene" uid="uid://ggjqnr7jy424" path="res://scenes/prefebs/box/box.tscn" id="5_ukn1i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7e2qp"]
