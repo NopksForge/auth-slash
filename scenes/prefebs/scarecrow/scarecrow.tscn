@@ -1,14 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4oo8p8kmn0fv"]
+[gd_scene load_steps=7 format=3 uid="uid://b4oo8p8kmn0fv"]
 
-[ext_resource type="Script" path="res://script/health_system/hp_system.gd" id="1_health"]
-[ext_resource type="PackedScene" uid="uid://dgqr2hryeo2ks" path="res://scenes/ui/hud/hp_bar/hp_bar.tscn" id="2_hpbar"]
+[ext_resource type="Script" path="res://scenes/prefebs/scarecrow/scarecrow.gd" id="1_5y7j5"]
+[ext_resource type="PackedScene" uid="uid://dgqr2hryeo2ks" path="res://scenes/ui/hud/hp_bar_monster/hp_bar_monster.tscn" id="2_hpbar"]
+[ext_resource type="PackedScene" uid="uid://cfd5py3yn12k1" path="res://script/health_system/hp_system.tscn" id="2_st0f3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7wfn2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_wir61"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_6mmwi"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Scarecrow" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_5y7j5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_7wfn2")
@@ -16,11 +21,8 @@ shape = SubResource("CapsuleShape3D_7wfn2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_wir61")
 
-[node name="HealthSystem" type="Node" parent="."]
-script = ExtResource("1_health")
+[node name="hp_system" parent="." instance=ExtResource("2_st0f3")]
 
-[node name="HPBarAnchor" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-billboard = 1
-
-[node name="HealthBars" parent="HPBarAnchor" instance=ExtResource("2_hpbar")]
+[node name="hp_bar" parent="." instance=ExtResource("2_hpbar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36112, 0)
+texture = SubResource("ViewportTexture_6mmwi")

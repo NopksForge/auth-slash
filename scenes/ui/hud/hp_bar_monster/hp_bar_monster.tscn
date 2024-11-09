@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgqr2hryeo2ks"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud/hp_bar_monster/hp_bar_monster.gd" id="1_8lydx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r2me1"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_armor"]
+bg_color = Color(0, 0.536757, 0.810731, 0.796078)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irl8y"]
+bg_color = Color(0.690617, 0.297119, 0.310429, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbc35"]
+bg_color = Color(0.212044, 0.700962, 0.463613, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 1
+
+[node name="hp_bar_monster" type="Sprite3D"]
+texture = SubResource("ViewportTexture_r2me1")
+script = ExtResource("1_8lydx")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(201, 20)
+
+[node name="armor_bar" type="ProgressBar" parent="SubViewport"]
+z_index = 1
+custom_minimum_size = Vector2(200, 20)
+offset_left = 1.0
+offset_right = 202.0
+offset_bottom = 20.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_armor")
+value = 50.0
+show_percentage = false
+
+[node name="health_bar" type="ProgressBar" parent="SubViewport"]
+custom_minimum_size = Vector2(200, 20)
+offset_left = 1.0
+offset_right = 201.0
+offset_bottom = 20.0
+theme_override_styles/background = SubResource("StyleBoxFlat_irl8y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gbc35")
+step = 0.1
+value = 70.0
+show_percentage = false

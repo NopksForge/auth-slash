@@ -15,7 +15,7 @@ var last_facing_direction = Vector3.ZERO
 
 func _ready():
 	# Set collision layers
-	collision_layer = 0b00000000_00000000_00000000_00000100  # layer 3 (player)
+	collision_layer = 0b00000000_00000000_00000000_0000010  # layer 2 (ground)
 	collision_mask = 0b00000000_00000000_00000000_00000010   # layer 2 (ground)
 
 func _physics_process(delta: float) -> void:

@@ -9,7 +9,8 @@
 [node name="practice_room" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0656122, 0.997845, 0, -0.997845, -0.0656122, 0, 11.84, -0.107965)
+transform = Transform3D(0.965595, -0.0170624, 0.259489, -0.260049, -0.0633548, 0.963515, 0, -0.997845, -0.0656122, 8.72181, 11.84, -0.107965)
+light_energy = 1.39
 
 [node name="Player" parent="." instance=ExtResource("2_cfoec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7.28247)

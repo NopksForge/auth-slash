@@ -1,6 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxkash8oax6sx"]
+[gd_scene load_steps=7 format=3 uid="uid://dxkash8oax6sx"]
 
 [ext_resource type="Script" path="res://scenes/prefebs/floor/floor.gd" id="1_e6i2q"]
+[ext_resource type="Texture2D" uid="uid://c0qq8o706lmh" path="res://assets/textures/rocker_terrain/rocky_terrain_02_diff_4k.jpg" id="2_3tn7i"]
+[ext_resource type="Texture2D" uid="uid://eubihw3i4vvr" path="res://assets/textures/rocker_terrain/rocky_terrain_02_nor_gl_4k.png" id="3_y4y1c"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_1m1ws"]
+albedo_texture = ExtResource("2_3tn7i")
+normal_enabled = true
+normal_texture = ExtResource("3_y4y1c")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bb5ww"]
 size = Vector3(50, 1, 50)
@@ -13,6 +21,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 script = ExtResource("1_e6i2q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ORMMaterial3D_1m1ws")
 mesh = SubResource("BoxMesh_bb5ww")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

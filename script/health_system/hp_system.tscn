@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfd5py3yn12k1"]
+
+[ext_resource type="Script" path="res://script/health_system/hp_system.gd" id="1_vioem"]
+
+[node name="hp_system" type="Node"]
+script = ExtResource("1_vioem")
